@@ -1,10 +1,29 @@
 function addDateStamp()
 {
+    // Create new date object
     var d = new Date();
-    var dateStamp = d.getFullYear().toString() 
-                + (d.getMonth()+1).toString() 
-                + d.getDate().toString();
-    return dateStamp.slice(2);
+
+    // Add a "0" to the day if one digit # (e.g. The 5th: 5 -> 05)
+    if (d.getDate() < 10) {
+        day = "0" + d.getDate().toString();
+    } else {
+        day = d.getDate().toString()
+    }
+
+    // Add a "0" to the month if one digit # (e.g. March: 3 -> 03)
+    // Need to add "1" to month b/c January = 0
+    if (d.getMonth()+1 < 10) {
+        month = "0" + (d.getMonth()+1).toString();
+    } else {
+        month = (d.getMonth()+1).toString()
+    }
+
+    // Remove first two digits of year (e.g. 2018 -> 18)
+    var year = (d.getFullYear().toString()).slice(2);
+    
+    // Create date stamp string and return
+    var dateStamp = year + month + day;
+    return dateStamp;
 }
 
 function saveTextAsFile()
