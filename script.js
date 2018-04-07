@@ -1,5 +1,17 @@
 function txtToTable()
 {
+    var txtFile = new XMLHttpRequest();
+    txtFile.open("GET", "human81021113676.github.io/definitions.txt", true);
+    txtFile.onreadystatechange = function() {
+      if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
+        if (txtFile.status === 200 || textFile.status == 0) {  // Makes sure it's found the file.
+          var allText = txtFile.responseText; 
+          var lines = txtFile.responseText.split("\n"); // Will separate each line into an array
+        }
+      }
+    }
+    txtFile.send(null);
+
     document.getElementById('pText').innerHTML = "hello";
 }
 
