@@ -12,7 +12,7 @@ function txtToTable()
     }
     txtFile.send(null);
 
-    document.getElementById('pText').innerHTML = "hello";
+    document.getElementById('pText').innerHTML = line[0];
 }
 
 /* function addDateStamp()
