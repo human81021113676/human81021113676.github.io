@@ -1,7 +1,7 @@
 function txtToTable()
 {
     var txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "human81021113676.github.io/definitions.txt", true);
+    txtFile.open("GET", "definitions.txt", false);
     txtFile.onreadystatechange = function() {
       if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
         if (txtFile.status === 200 || textFile.status == 0) {  // Makes sure it's found the file.
