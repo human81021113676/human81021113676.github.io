@@ -1,18 +1,20 @@
 function txtToTable()
 {
     var txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "definitions.txt", true);
+    txtFile.open("GET", "definitions.txt", false);
     txtFile.onreadystatechange = function() {
       if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
-        if (txtFile.status === 200) {  // Makes sure it's found the file.
-          allText = txtFile.responseText; 
-          lines = txtFile.responseText.split("\n"); // Will separate each line into an array
+        if (txtFile.status === 200 || rawFile.status == 0) {  // Makes sure it's found the file.
+          var allText = txtFile.responseText; 
+          var lines = txtFile.responseText.split("\n"); // Will separate each line into an array
         }
       }
     }
     txtFile.send(null);
-    return lines[0];
+
+    document.getElementById('pText').innerHTML = lines[0];
 }
+
 
 /* function addDateStamp()
 {
