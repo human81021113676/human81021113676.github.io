@@ -1,7 +1,7 @@
 function txtToTable()
 {
     var txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "human81021113676.github.io/master/definitions.txt", true);
+    txtFile.open("GET", "https://github.com/human81021113676/human81021113676.github.io/blob/master/definitions.txt", true);
     txtFile.onreadystatechange = function() {
       if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
         if (txtFile.status === 200 || txtFile.status == 0) {  // Makes sure it's found the file.
@@ -10,7 +10,7 @@ function txtToTable()
           var lines = txtFile.responseText.split("\n"); // Will separate each line into an array
         }
         else {
-            var hi = "we found the file!";
+            var hi = "we didn't find the file!";
         }
       }
     }
