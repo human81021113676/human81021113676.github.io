@@ -9,6 +9,9 @@ function txtToTable()
           var allText = txtFile.responseText; 
           var lines = txtFile.responseText.split("\n"); // Will separate each line into an array
         }
+        else {
+            var hi = "we found the file!";
+        }
       }
     }
     txtFile.send(null);
